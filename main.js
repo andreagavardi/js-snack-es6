@@ -96,10 +96,34 @@ for(let i = 0; i < squadre.length; i++){
     squadraEl.punti = randomNumbers(); //sostituisco i valori di falli e punti con numeri casuali
     squadraEl.falli = randomNumbers();//Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti.
     const { nome, falli} = squadraEl //Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+   
     squadreCopia.push({ nome, falli});
 }
 console.log(squadre);
 console.log(squadreCopia);
+
+/* Snack 3:
+Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+:collisione: Usiamo i nuovi metodi degli array foreach o filter. */
+
+const Numbers = [1,2,3,4,5,10,62,93];
+
+const valoriCompresi = (lista,min,max)=>{
+    const compresi = lista.filter((elemento)=>{
+
+        if(lista.lastIndexOf(elemento) >= min && lista.lastIndexOf(elemento) < (max -1)){
+            return true;
+        }else {
+            return false;
+        }
+
+    });
+    return compresi;
+};
+const result = valoriCompresi(Numbers,4,8);
+console.log(result);
+
 
 
 
